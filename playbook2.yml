@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: ansible
+  become: yes 
+  tasks:
+  - name: Upgrade
+    yum:
+      name: "*"
+      state: latest
+  - name: install mc
+    yum:
+      name: mc
+      state: latest 
+ 
