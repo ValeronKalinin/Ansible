@@ -45,7 +45,7 @@
       enabled: yes  
   
   - name: Testing
-    command: docker run hello-world
+    shell: docker run hello-world
     register: output
 
   - debug:
