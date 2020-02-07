@@ -9,12 +9,14 @@
       state: latest
   - name: install mc
     yum:
-      name: mc
+      name: 
+        - mc
+        - wget 
       state: latest 
-  
-  - name: install mc
+
+  - name: iinstall docker
     yum:
-      name: install docker
+      name: 
         - yum-utils
         - device-mapper-persistent-data
         - lvm2
@@ -24,7 +26,6 @@
     get_url:
       url: https://download.docker.com/linux/centos/docker-ce.repo
       dest: /etc/yum.repos.d/docker-ce.repo
-  
   - name: Install DOCKER
     yum:
       name: 
