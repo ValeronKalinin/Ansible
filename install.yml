@@ -46,3 +46,7 @@
   
   - name: Testing
     command: docker run hello-world
+    register: output
+
+  - debug:
+    var: output
