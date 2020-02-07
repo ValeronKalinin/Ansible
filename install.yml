@@ -3,15 +3,19 @@
   remote_user: ansible
   become: yes 
   tasks:
-  - name: Upgrade
+  #обновляем систему
+  - name: Upgrade System
     yum:
       name: "*"
       state: latest
-  - name: install mc
+  #устанавливаем минимальный набор утилит
+  - name: install utils
     yum:
       name: 
         - mc
-        - wget 
+        - wget
+        - net-tools
+        - nano
       state: latest 
 
   - name: iinstall docker
