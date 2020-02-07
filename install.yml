@@ -49,4 +49,4 @@
     register: output
 
   - debug:
-    msg: {{ output }}
+      var: output 
