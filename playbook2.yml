@@ -11,4 +11,33 @@
     yum:
       name: mc
       state: latest 
- 
+  
+  - name: install mc
+    yum:
+      name: install docker
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+      state: latest
+  
+  - name: Add Docker repo
+    get_url:
+      url: https://download.docker.com/linux/centos/docker-ce.repo
+      dest: /etc/yum.repos.d/docker-ce.repo
+  
+  - name: Install DOCKER
+    yum:
+      name: 
+        - docker-ce 
+        - docker-ce-cli 
+        - containerd.io
+      state: latest
+  
+  - name: Start Docker service
+    service:
+      name: Docker
+      state: started
+      enabled: yes  
+  
+  - name: Testing
+    command: docker run hello-world
