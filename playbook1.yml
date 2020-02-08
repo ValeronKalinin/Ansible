@@ -2,6 +2,7 @@
 - name: Make wheel
   hosts: all
   remote_user: root
+  become: yes
   tasks:
     - name: Create a login user
       user:
