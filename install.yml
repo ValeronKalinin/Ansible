@@ -22,14 +22,13 @@
           url: https://download.docker.com/linux/centos/docker-ce.repo
           dest: /etc/yum.repos.d/docker-ce.repo
         yum:
-          name: 
-            - yum-utils
-            - device-mapper-persistent-data
-            - lvm2
-            - docker-ce 
-            - docker-ce-cli 
-            - containerd.io
-          state: latest
+          - yum-utils
+          - device-mapper-persistent-data
+          - lvm2
+          - docker-ce 
+          - docker-ce-cli 
+          - containerd.io
+        state: latest
     when: ansible_os_family == "RedHat"
 
 
