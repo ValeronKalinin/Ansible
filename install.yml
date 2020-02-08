@@ -41,6 +41,7 @@
       - name: Upgrade System and install utils
         apt:
           name: 
+            - "*"
             - mc
             - wget
             - nano
