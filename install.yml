@@ -6,6 +6,8 @@
   tasks:
   #обновляем систему и устанавливаем утилиты
   - block: # Для CENTOS
+      - name: Ptint OS version
+        debug: var="ansible_os_family"
       - name: Upgrade System and install utils
         yum:
           name: 
@@ -33,6 +35,8 @@
     when: ansible_os_family == "RedHat"
 
   - block: # Для Ubuntu
+      - name: Ptint OS version
+        debug: var="ansible_os_family"
       - name: Upgrade System and install utils
         apt:
           name: 
