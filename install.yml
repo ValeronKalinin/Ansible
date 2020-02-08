@@ -70,15 +70,15 @@
           state: latest
     when: ansible_os_family == "Debian"
 
-- name: Start Docker service
-  service:
-    name: docker
-    state: started
-    enabled: yes  
-  
-- name: Testing
-  command: docker run hello-world
-  register: output
+  - name: Start Docker service
+    service:
+      name: docker
+      state: started
+      enabled: yes  
+    
+  - name: Testing
+    command: docker run hello-world
+    register: output
 
-- debug:
-    var:  output
+  - debug:
+      var:  output
