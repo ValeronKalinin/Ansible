@@ -38,10 +38,13 @@
   - block: # Для Ubuntu
       - name: Ptint OS version
         debug: var="ansible_os_family"
-      - name: Upgrade System and install utils
+      - name: Upgrade System a
         apt:
           name: 
             - "*"
+      - name: install utils
+        apt:
+          name: 
             - mc
             - wget
             - nano
