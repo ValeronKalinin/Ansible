@@ -24,13 +24,14 @@
       
       - name: Install DOCKER 
         yum:
-          - yum-utils
-          - device-mapper-persistent-data
-          - lvm2
-          - docker-ce 
-          - docker-ce-cli 
-          - containerd.io
-        state: latest
+          name:
+            - yum-utils
+            - device-mapper-persistent-data
+            - lvm2
+            - docker-ce 
+            - docker-ce-cli 
+            - containerd.io
+          state: latest
     when: ansible_os_family == "RedHat"
 
 
