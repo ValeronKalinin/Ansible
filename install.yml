@@ -4,42 +4,35 @@
   become: yes 
   gather_facts: no
   tasks:
-  #обновляем систему
-  - name: Upgrade System
-    yum:
-      name: "*"
-      state: latest
-  #устанавливаем минимальный набор утилит
-  - name: install utils
-    yum:
-      name: 
-        - mc
-        - wget
-        - net-tools
-        - nano
-      state: latest 
-      use_backend: yum4
+  #обновляем систему и устанавливаем утилиты
+  - block: # Для CENTOS
+      - name: Upgrade System and install utils
+        yum:
+          name: 
+            - "*" 
+            - mc
+            - wget
+            - net-tools
+            - nano
+          state: latest 
+    #     use_backend: yum4
+        
+      - name: Install DOCKER
+        get_url:
+          url: https://download.docker.com/linux/centos/docker-ce.repo
+          dest: /etc/yum.repos.d/docker-ce.repo
+        yum:
+          name: 
+            - yum-utils
+            - device-mapper-persistent-data
+            - lvm2
+            - docker-ce 
+            - docker-ce-cli 
+            - containerd.io
+          state: latest
+    when: ansible_os_family == "RedHat"
 
-  - name: iinstall docker
-    yum:
-      name: 
-        - yum-utils
-        - device-mapper-persistent-data
-        - lvm2
-      state: latest
-  
-  - name: Add Docker repo
-    get_url:
-      url: https://download.docker.com/linux/centos/docker-ce.repo
-      dest: /etc/yum.repos.d/docker-ce.repo
-  - name: Install DOCKER
-    yum:
-      name: 
-        - docker-ce 
-        - docker-ce-cli 
-        - containerd.io
-      state: latest
-  
+
   - name: Start Docker service
     service:
       name: docker
