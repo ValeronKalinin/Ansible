@@ -51,4 +51,8 @@
     register: output
 
   - debug:
+<<<<<<< HEAD
       var:  output
+=======
+      var: output 
+>>>>>>> a731d659d38f6db7b6f4a1d0ca625ff9b85a8fdb
