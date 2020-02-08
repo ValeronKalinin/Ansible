@@ -6,6 +6,8 @@
   tasks:
   #обновляем систему и устанавливаем утилиты
   - block: # Для CENTOS
+      - name: Ptint OS version
+        debug: var="ansible_os_family"
       - name: Upgrade System and install utils
         yum:
           name: 
@@ -17,12 +19,10 @@
           state: latest 
     #     use_backend: yum4
         
-      - name: Install DOCKER REPO
+      - name: Install DOCKER
         get_url:
           url: https://download.docker.com/linux/centos/docker-ce.repo
           dest: /etc/yum.repos.d/docker-ce.repo
-      
-      - name: Install DOCKER 
         yum:
           name:
             - yum-utils
@@ -34,16 +34,49 @@
           state: latest
     when: ansible_os_family == "RedHat"
 
+  - block: # Для Ubuntu
+      - name: Ptint OS version
+        debug: var="ansible_os_family"
+      - name: Upgrade System and install utils
+        apt:
+          name: 
+            - "*" 
+            - mc
+            - wget
+            - nano
+          state: latest 
+    #     use_backend: yum4
+        
+      - name: Install DOCKER prereq
+        apt:
+          name:
+            - ca-certificates 
+            - curl 
+            - gnupg-agent 
+            - software-properties-common
+          state: latest
+        command: 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && apt-key fingerprint 0EBFCD88 && add-apt-repository \
+                  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+                  $(lsb_release -cs) \
+                  stable"'
+      - name: Install DOCKER 
+        apt:
+          name:
+            - docker-ce 
+            - docker-ce-cli 
+            - containerd.io
+          state: latest
+    when: ansible_os_family == "Debian"
 
-  - name: Start Docker service
-    service:
-      name: docker
-      state: started
-      enabled: yes  
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes  
   
-  - name: Testing
-    command: docker run hello-world
-    register: output
+- name: Testing
+  command: docker run hello-world
+  register: output
 
-  - debug:
-      var:  output
+- debug:
+    var:  output
