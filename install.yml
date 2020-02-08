@@ -2,7 +2,7 @@
 - hosts: all
   remote_user: ansible
   become: yes 
-  gather_facts: no
+ # gather_facts: no
   tasks:
   #обновляем систему и устанавливаем утилиты
   - block: # Для CENTOS
