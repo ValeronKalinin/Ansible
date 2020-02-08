@@ -17,10 +17,12 @@
           state: latest 
     #     use_backend: yum4
         
-      - name: Install DOCKER
+      - name: Install DOCKER REPO
         get_url:
           url: https://download.docker.com/linux/centos/docker-ce.repo
           dest: /etc/yum.repos.d/docker-ce.repo
+      
+      - name: Install DOCKER 
         yum:
           - yum-utils
           - device-mapper-persistent-data
