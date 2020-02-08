@@ -60,8 +60,8 @@
             - software-properties-common
           state: latest
       - name: Add repo  
-        get-url: 
-          url: https://download.docker.com/linux/ubuntu/gpg
+        get_url:
+          url: https://download.docker.com/linux/ubuntu/gpg 
           dest: ~/repokey
         #command: 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add - && apt-key fingerprint 0EBFCD88 && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"'
       - name: Add repo 2  
