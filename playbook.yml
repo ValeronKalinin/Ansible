@@ -1,0 +1,21 @@
+---
+- name: Make wheel
+  hosts: all
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Create a login user
+      user:
+          name: ansible
+    - name: example copying file with owner and permissions
+      copy:
+        src: ./authorized_keys
+        dest: ~ansible/.ssh/
+        owner: ansible
+        mode: 0600
+    - lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%sudo'
+        line: 'ansible ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
