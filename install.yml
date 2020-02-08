@@ -67,7 +67,7 @@
       - name: Add repo 2  
         command: "apt-key add ~/repokey"
       - name: Add repo 3
-        command: 'dd-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"'
+        command: 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"'
       - name: Install DOCKER 
         apt:
           name:
