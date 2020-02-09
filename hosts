@@ -1,13 +1,14 @@
 [aws]
 3.14.69.254
+13.59.157.195
 [aws:vars]
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
 
 
-[docker]
-docker.mshome.net 
+#[docker]
+#docker.mshome.net 
 
-[docker:vars]
+#[docker:vars]
 
 
