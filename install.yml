@@ -38,10 +38,9 @@
   - block: # Для Ubuntu
       - name: Ptint OS version
         debug: var="ansible_os_family"
-      - name: Upgrade System a
+      - name: Upgrade System "apt-get update"
         apt:
-          name: 
-            - "*"
+          update_cache: yes
       - name: install utils
         apt:
           name: 
