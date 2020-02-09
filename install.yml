@@ -16,6 +16,7 @@
             - wget
             - net-tools
             - nano
+            - htop
           state: latest 
     #     use_backend: yum4
         
@@ -47,6 +48,7 @@
             - mc
             - wget
             - nano
+            - htop
           state: latest 
     #     use_backend: yum4
         
