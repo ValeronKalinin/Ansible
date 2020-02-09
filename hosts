@@ -1,6 +1,6 @@
-[aws]
-3.14.69.254
-[aws:vars]
+[awsEU]
+18.194.207.185
+[awsEU:vars]
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
 
