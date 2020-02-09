@@ -1,5 +1,5 @@
 [awsEU]
-18.194.207.185
+54.93.115.78
 [awsEU:vars]
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
