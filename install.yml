@@ -83,7 +83,7 @@
       enabled: yes  
     
   - name: Testing
-    command: docker run hello-world
+    command: docker run chuanwen/cowsay
     register: output
 
   - debug:
