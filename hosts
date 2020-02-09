@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-[aws]
-3.14.69.254
-13.59.157.195
-[aws:vars]
-=======
 [awsEU]
 18.194.207.185
 [awsEU:vars]
->>>>>>> fd364c5ef5ac72349797416bb295f3564a26a368
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
 
 
-#[docker]
-#docker.mshome.net 
+[docker]
+docker.mshome.net 
 
-#[docker:vars]
+[docker:vars]
 
 
