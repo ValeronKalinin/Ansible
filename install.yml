@@ -90,7 +90,7 @@
       dest: /usr/cowsay/
       owner: Root
       mode: 0660
-    command: docker run cowsay "Test"
+    command: cd /usr/cowsay/ && docker build -t coesay . &&   docker run cowsay "Test"
     register: output
 
   - debug:
