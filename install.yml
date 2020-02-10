@@ -85,7 +85,12 @@
       enabled: yes  
     
   - name: Testing
-    command: docker run chuanwen/cowsay
+    copy:
+      src: ./cowsay/*
+      dest: /usr/cowsay/
+      owner: Root
+      mode: 0660
+    command: docker run cowsay "Test"
     register: output
 
   - debug:
