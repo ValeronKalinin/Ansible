@@ -92,7 +92,7 @@
       mode: 0660
     
   - name: Build cowsay
-    command: cd /usr/cowsay/ && docker build -t cowsay .    
+    command: docker build -f /usr/cowsay/Dockerfile -t cowsay  .    
     
     
   - name: Run cowsay
