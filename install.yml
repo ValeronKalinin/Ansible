@@ -84,13 +84,19 @@
       state: started
       enabled: yes  
     
-  - name: Testing
+  - name: Copy Dockerfile
     copy:
       src: ./cowsay/*
       dest: /usr/cowsay/
       owner: Root
       mode: 0660
-    command: cd /usr/cowsay/ && docker build -t coesay . &&   docker run cowsay "Test"
+    
+  - name: Build cowsay
+    command: cd /usr/cowsay/ && docker build -t coesay .    
+    
+    
+  - name: Run cowsay
+    command: docker run cowsay "Test"
     register: output
 
   - debug:
