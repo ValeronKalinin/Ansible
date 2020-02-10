@@ -1,5 +1,5 @@
 [awsEU]
-54.93.115.78
+ec2-3-122-127-174.eu-central-1.compute.amazonaws.com
 [awsEU:vars]
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
