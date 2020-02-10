@@ -88,7 +88,7 @@
     copy:
       src: ./cowsay/
       dest: /usr/cowsay
-      owner: Root
+      owner: root
       mode: 0660
     
   - name: Build cowsay
