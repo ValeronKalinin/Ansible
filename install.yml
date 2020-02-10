@@ -86,8 +86,8 @@
     
   - name: Copy Dockerfile
     copy:
-      src: ./cowsay/*
-      dest: /usr/cowsay/
+      src: ./cowsay/
+      dest: /usr/cowsay
       owner: Root
       mode: 0660
     
