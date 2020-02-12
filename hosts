@@ -9,7 +9,7 @@ ansible_python_interpreter=/usr/bin/python3
 ec2-35-158-95-135.eu-central-1.compute.amazonaws.com
 
 [AawsEU:vars]
-ansible_user=ec2-user pts
+ansible_user=ec2-user
 
 [docker]
 docker.mshome.net 
