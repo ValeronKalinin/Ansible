@@ -1,9 +1,15 @@
-[awsEU]
+[UawsEU]
 ec2-3-122-127-174.eu-central-1.compute.amazonaws.com
-[awsEU:vars]
+
+[UawsEU:vars]
 ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
 
+[AawsEU]
+ec2-35-158-95-135.eu-central-1.compute.amazonaws.com
+
+[AawsEU:vars]
+ansible_user=ec2-user pts
 
 [docker]
 docker.mshome.net 
