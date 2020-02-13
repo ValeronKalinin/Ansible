@@ -1,6 +1,6 @@
 ---
 - name: Check OS
-  hosts: all
+  hosts: local
   become: yes
   tasks:
     - name: Ptint OS version
