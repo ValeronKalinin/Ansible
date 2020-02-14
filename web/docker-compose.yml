@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  httpd1:
+    image: httpd
+    ports:
+      - 8080:80
+    volumes:     
+      - ./index.html:/usr/local/apache2/htdocs/index.html
+      
+  httpd2:
+    image: httpd
+    ports:
+      - 8081:80
+    volumes:
+      - ./index.html:/usr/local/apache2/htdocs/index.html
+
+  haproxy:
+    image: haproxy
+    ports:
+      - 8000:80
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    links:
+      - httpd1:app1
+      - httpd2:app2

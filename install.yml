@@ -100,4 +100,4 @@
     register: output
 
   - debug:
-      var:  output
+      var:  output.stdout_lines
