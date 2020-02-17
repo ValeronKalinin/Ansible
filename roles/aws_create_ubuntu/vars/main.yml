@@ -1,0 +1,8 @@
+---
+# vars file for aws_create_ubuntu
+    acc_key: AKIAVCNJGTC2BYEFMNKE
+    sec_key: KuzEbHDqE2LJZjDm5uApZsPhmMBbr07QJwKg4F1P
+    key:     FrankfurtAWS
+    image:   ami-0883d387cc44ce153 #ami-0b418580298265d5c
+    region:  eu-central-1
+

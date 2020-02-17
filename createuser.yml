@@ -1,8 +1,7 @@
 ---
-- name: Make wheel
-  hosts: all
-  remote_user: root
+- hosts: all
   become: yes
+  remote_user: ubuntu 
   tasks:
     - name: Create a login user
       user:

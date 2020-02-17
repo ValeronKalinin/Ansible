@@ -4,7 +4,7 @@
 
 #[UawsEU]
 #ec2-3-122-127-174.eu-central-1.compute.amazonaws.com
-
+#ec2-52-59-239-220.eu-central-1.compute.amazonaws.com
 #[UawsEU:vars]
 #ansible_user=ubuntu
 #ansible_python_interpreter=/usr/bin/python3

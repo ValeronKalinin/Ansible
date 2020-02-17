@@ -1,0 +1,8 @@
+---
+- name: CreateAWS instances
+  become: yes
+  hosts: localhost
+  
+  roles:
+    - aws_create_ubuntu
+    

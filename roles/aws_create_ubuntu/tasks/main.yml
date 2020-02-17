@@ -1,0 +1,21 @@
+---
+# tasks file for aws_create_ubuntu
+
+    - name: Create ubuntu instances    
+      ec2:
+        aws_access_key: "{{ acc_key }}"
+        aws_secret_key: "{{ sec_key }}"
+        key_name: "{{ key  }}"
+        instance_type: t2.micro
+        region: "{{ region  }}"
+        image: "{{ image  }}"
+        wait: yes
+        #group: ubuntu
+        #exact_count:  1
+        #count_tag:
+        #  Name: "{{ name }}{{ item }}"
+        instance_tags:
+          Name:         "{{ name }}{{ item }}"
+          Environment:  "{{ env }}"
+          Service:      "{{ srv }}"
+      with_sequence: count={{ count }}

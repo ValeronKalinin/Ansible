@@ -1,0 +1,9 @@
+---
+- name: CreateAWS instances
+  become: yes
+  hosts: all
+  
+  roles:
+    - install_apache
+
+    

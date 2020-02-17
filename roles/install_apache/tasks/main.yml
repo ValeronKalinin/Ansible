@@ -1,0 +1,11 @@
+---
+# tasks file for install_apache
+
+  - block:
+      - name: apt-get apache2
+        apt: 
+          upgrade: yes
+          update_cache: yes
+          state: latest
+          name: apache2  
+    when: ansible_os_family=="Debian"  
